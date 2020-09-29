@@ -5,7 +5,8 @@
 1. use abundance matrix for downstream analysis
 2. data sharing:
    1. Shaopeng currently run data in his lab server, waiting for feedback from ICS helpdesk regarding sharing large files (~30GB) in the ICS server. 
-   2. All scripts will be pushed to the github repo
+   2. All scripts will be pushed to the github repo  
+3. please put all finished scripts in the **src** folder and all intermediate files into a separate folder for each task  
    
 #### Check list:
 
