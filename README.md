@@ -16,9 +16,9 @@
   - [ ] 1.3 Pipeline: pull some files -> generate pairwise similarity matrix for a given k (for iterative tree building purpose)
 
 - [ ] 2. Implement ML methods and performance evaluation for cleaned matrix
-  3. [ ] 2.1 Pick methods: random forest, ???
-  4. [ ] 2.2 Evaluation matrix
-  5. [ ] 2.3 pipeline: start from the cleaned matrix
+  - [ ] 2.1 Pick methods: random forest, ???
+  - [ ] 2.2 Evaluation matrix
+  - [ ] 2.3 pipeline: start from the cleaned matrix
 
 - [ ] 3. Implement different DRs as control
 
