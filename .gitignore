@@ -2,5 +2,8 @@
 
 # ignore the conda env for WTST
 src/MCIBS566_project_env_py37/
+# ignore the NCBI database
+src/NCBI_database/
+
 
 
