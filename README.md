@@ -6,17 +6,18 @@ To repeat all the results presented for MCBIS556 project, please follow the step
 ```
 git clone https://github.com/ShaopengLiu1/MCIBS556_20FA_project.git
 ```
-3. Go to `MCIBS556_20FA_project/src` folder, then run the scripts listed below:
-   3.1. install conda environment by (!!!this file will be merged with Morris' and be renamed later!!!)
-   ```
-   bash install_dependency_shaopeng.sh
-   ``` 
-   3.2. download the NCBI bacteira genome/protein database 
-   ```
-   #Note: this script would run ~10 hours and need ~40GB storage!!!
-   #For convenience, "nohup" is recomended, please run the cmd and just leave it to run (it's safe to quit your session with nohup)
-   nohup bash download_ncbi_database.sh &
-   ```
+3. Go to `MCIBS556_20FA_project/src` folder, then run the scripts listed below:  
+3.1. install conda environment by (!!!this file will be merged with Morris' and be renamed later!!!)
+```
+bash install_dependency_shaopeng.sh
+``` 
+3.2. download the NCBI bacteira genome/protein database 
+```
+#Note: this script would run ~10 hours and need ~40GB storage!!!
+#For convenience, "nohup" is recomended, please run the cmd and just leave it to run (it's safe to quit your session with nohup)
+nohup bash download_ncbi_database.sh &
+```
+
 ## Repeat results in each steps
 1. Build abundance matrix from input NGS data in fastq format
 2. To be continued......
