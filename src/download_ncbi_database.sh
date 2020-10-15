@@ -1,7 +1,6 @@
 # download NCBI bacteria genome/protein database
 # For simplicity: only download completed records, omitting all partial / incomplete data.
-# This step would take few hours and ~60GB storage!
-# ref: ftp://ftp.ncbi.nlm.nih.gov/genomes/
+# This step would take ~10 hours and ~40GB storage for single threads.
 
 
 
@@ -28,7 +27,7 @@ else
 	awk -F '\t'  '{if($12=="Complete Genome" && $11=="latest") print $20}' NCBI_GenBank_bacteria_assembly_summary.txt \
 		> NCBI_GenBank_download_link.txt
 	# download all genome files and protein files
-	for file in $(cat NCBI_GenBank_download_link.txt | head -3); do
+	for file in $(cat NCBI_GenBank_download_link.txt); do
 		suffix=$(echo ${file##*/})
 		echo "downloading $suffix"
 		wget -q ${file}/${suffix}_genomic.fna.gz 2>/dev/null  
@@ -36,6 +35,7 @@ else
 	done
 	mv *_genomic.fna.gz ./genomes
 	mv *_protein.faa.gz ./proteins
+	rm wget-log* 2>/dev/null
 fi
 
 
