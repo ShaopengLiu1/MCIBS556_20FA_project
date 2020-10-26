@@ -32,34 +32,39 @@ nohup bash download_ncbi_database.sh &
 3. please put all finished scripts in the **src** folder and all intermediate files into a separate folder for each task  
    
 ## Progress checklist
-- [ ] 1. Data preparation (week of 10.12)
+- [ ] 1. Resources  
 
-  - [ ] 1.1 Pipeline: raw data -> count matrix (Bracken, kallastio) -> abundance matrix -> cleaned matrix
-  - [x] 1.2 Download NCBI bacteria genome/protein database 
-  - [ ] 1.3 Pipeline: pull some files -> generate pairwise similarity matrix for a given k (for iterative tree building purpose)
+  - [x] 1.1 Download NCBI bacteria genome/protein database 
+  - [ ] 1.2 Find bacteria lists for specific targets (biological traits, human microbiome project, whole phylogenetic tree)
 
-- [ ] 2. Implement different DRs as control (week of 10.19 and 10.26)
+- [ ] 2. Prepare input data (by week of 10.26)  
 
-  - [ ] 2.1 Taxonomic-based DR
-  - [ ] 2.2 Data-driven DR
-  - [ ] 2.3 What other papers use
+  - [ ] 2.1 Pipeline: produce abundance matrix from input metagenome/16S data
+  - [ ] 2.2 Pipeline: generate a similarity matrix for a given list of bacteria
 
-- [ ] 3. Implement ML methods and performance evaluation for cleaned matrix (week of 11.2)
-  - [ ] 3.1 Pick methods: random forest, neuron network, GLM, etc.
-  - [ ] 3.2 Evaluation matrix
-  - [ ] 3.3 pipeline: start from the cleaned matrix
+- [ ] 3. Implement different DRs as control 
 
-- [ ] 4. Build similarity-based tree (week of 11.9 and 11.16)
+  - [ ] 3.1 Pipeline: Taxonomic-based DR
+  - [ ] 3.2 Pipeline: Data-driven DR based on covariance
+  - [ ] 3.3 What other papers use (need to check)
 
-  - [ ] 4.1 Tree logic: iteratively divide groups into subgroups (call pipe 1.3)?
+- [ ] 4. Build similarity-based tree  
+
+  - [ ] 4.1 Tree logic: iteratively divide groups into subgroups
   - [ ] 4.2 Combine 3 to build similairty-based DR
-
-- [ ] 5. Results comparison (week of 11.23 and 11.30)
   
-  - [ ] 5.1 Incorporate 3.1-3.3, 4.2 with pipe 2.3, compare the results
-  - [ ] 5.2 Writing!
+- [ ] 5. Implement ML methods and performance evaluation for cleaned matrix 
 
-- [ ] 6. Extension (possibly the true meet for the future)
+  - [ ] 5.1 Pick methods: random forest, neuron network, GLM, etc.
+  - [ ] 5.2 Evaluation matrix
+  - [ ] 5.3 pipeline: run abundance matrix with some DR method and generate the evaluation matrix
+
+- [ ] 6. Results comparison  
+  
+  - [ ] 6.1 Incorporate 3.1-3.3, 4.2 with pipe 5.3, compare the results
+  - [ ] 6.2 Writing!
+
+- [ ] 7. Extension (possibly the true meet for the future)  
 
   - [ ] Compare similarity-based tree VS phylogenetic tree VS data-driven tree
 
