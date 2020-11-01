@@ -32,15 +32,15 @@ nohup bash download_ncbi_database.sh &
 3. please put all finished scripts in the **src** folder and all intermediate files into a separate folder for each task  
    
 ## Progress checklist
-- [ ] 1. Resources  
+- [x] 1. Resources  
 
   - [x] 1.1 Download NCBI bacteria genome/protein database 
-  - [ ] 1.2 Find bacteria lists for specific targets (biological traits, human microbiome project, whole phylogenetic tree)
+  - [x] 1.2 Find bacteria lists for specific targets (biological traits, human microbiome project, whole phylogenetic tree)
 
 - [ ] 2. Prepare input data (by week of 10.26)  
 
   - [ ] 2.1 Pipeline: produce abundance matrix from input metagenome/16S data
-  - [ ] 2.2 Pipeline: generate a similarity matrix for a given list of bacteria
+  - [x] 2.2 Pipeline: generate a similarity matrix for a given list of bacteria
 
 - [ ] 3. Implement different DRs as control 
 
