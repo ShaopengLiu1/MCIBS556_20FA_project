@@ -26,6 +26,10 @@ else
 	# only complete and latest genomes would be kept
 	awk -F '\t'  '{if($12=="Complete Genome" && $11=="latest") print $20}' NCBI_GenBank_bacteria_assembly_summary.txt \
 		> NCBI_GenBank_download_link.txt
+	# complete list for quick search
+	awk -F '\t' -v OFS='\t'  '{if($12=="Complete Genome" && $11=="latest") print $1,$5,$6,$7,$8}' NCBI_GenBank_bacteria_assembly_summary.txt | cat <(echo -e "accession\tref_category\ttaxid\tspecies_taxid\tname") - > NCBI_complete_genome_quick_list.txt
+	# full record list for quick ref
+	awk -F '\t' -v OFS='\t'  '{print $1,$5,$6,$7,$8}' NCBI_GenBank_bacteria_assembly_summary.txt | cat <(echo -e "accession\tref_category\ttaxid\tspecies_taxid\tname") - > NCBI_full_record_quick_ref.txt
 	# download all genome files and protein files
 	for file in $(cat NCBI_GenBank_download_link.txt); do
 		suffix=$(echo ${file##*/})
