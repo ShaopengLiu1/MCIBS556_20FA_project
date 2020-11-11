@@ -21,7 +21,7 @@ DATA=/gpfs/group/mah546/default/personal/Morris/CBIOS/data/16s
 for i in {1..260}
 do
 SRA=$(sed -n $( echo $i )p $DATA/SRA_16s_list.txt)
-$BRAKEN/bracken -d $DBNAME -i $OUTPUT/16s_$SRA.kreport -o $DBNAME/$SRA.bracken -r $READLEN -l 'S' -t 10
+$BRAKEN/bracken -d $DBNAME -i $OUTPUT/16s_$SRA.kreport -o $DBNAME/$SRA.bracken -r $READLEN -l G -t 10
 SRA=0
 echo $i
 done
