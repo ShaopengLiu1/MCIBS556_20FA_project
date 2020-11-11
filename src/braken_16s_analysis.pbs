@@ -1,0 +1,27 @@
+#PBS -N Braken2_16s
+#PBS -l nodes=1:ppn=6
+#PBS -l pmem=2gb
+#PBS -l walltime=10:00:00
+#PBS -A mah546_a_g_sc_default
+#PBS -j oe
+#PBS -M m0rris@psu.edu
+#PBS -m abe
+
+BRAKEN=/storage/home/mua447/work/CBIOS_project/sw/Bracken
+KRAKEN2=/storage/home/mua447/work/CBIOS_project/sw/kraken2
+DBNAME=/gpfs/group/mah546/default/personal/Morris/CBIOS/16S_RDP_k2db
+READLEN=/gpfs/group/mah546/default/personal/Morris/CBIOS/16S_RDP_k2db/database150mers.kmer_distrib
+OUTPUT=/storage/home/mua447/work/CBIOS_project/output
+DATA=/gpfs/group/mah546/default/personal/Morris/CBIOS/data/16s
+
+# -r: reads are 150nt in length
+# -l: classify at the level of species
+# -t: threshold, default 10
+
+for i in {1..260}
+do
+SRA=$(sed -n $( echo $i )p $DATA/SRA_16s_list.txt)
+$BRAKEN/bracken -d $DBNAME -i $OUTPUT/16s_$SRA.kreport -o $DBNAME/$SRA.bracken -r $READLEN -l 'S' -t 10
+SRA=0
+echo $i
+done
