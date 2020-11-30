@@ -2,7 +2,7 @@
 # input: a txt file in which each line represent a taxon_id
 # output: a txt file containing abs path of all corresponding genome files
 # programmer: Shaopeng
-# last update: 10/31/2020
+# last update: 11/29/2020
 
 
 
@@ -12,6 +12,12 @@ echo "The input file is ${input_file}"
 [ -z $input_file ] && echo "Missing input taxon list!!!" && exit 1
 ### remove trailing blank lines if any
 sed -i '/^$/d' ${input_file}
+
+### specific operation for "otutable.txt" input in this analysis
+if [ $input_file == "otutable.txt" ]; then
+	cut -f 1 otutable.txt | sed '1d' | cut -d"_" -f 4 > species_list.txt
+	input_file=species_list.txt
+fi
 
 
 echo "Note: the associated-species file uses species taxon id, which contains sub-string information"

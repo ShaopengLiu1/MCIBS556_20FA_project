@@ -1,0 +1,8 @@
+Sun Nov 29 21:22:14 EST 2020
+The input file is otutable.txt
+Note: the associated-species file uses species taxon id, which contains sub-string information
+Only complete genomes would be used, all contigs would be ignored
+In total, 523 out of 908 genomes have been found in the complete genome list.
+The missing rate is 0.424008810573
+pipeline finished
+Sun Nov 29 21:23:15 EST 2020

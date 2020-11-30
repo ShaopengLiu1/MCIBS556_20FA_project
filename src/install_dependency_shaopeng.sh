@@ -28,8 +28,23 @@ conda install -y -c bioconda sourmash
 conda install -y -c bioconda khmer
 # install kmc
 conda install -y -c bioconda kmc
+# install sra toolkits
+conda install -y -c bioconda sra-tools
+# conda Bracken is NOT an official version, and is not properly installed by conda install
+# install kracken2 in conda (bracken by git)
+conda install -y -c bioconda kraken2
 
 conda deactivate
+
+
+
+
+
+
+
+
+
+
 
 
 
