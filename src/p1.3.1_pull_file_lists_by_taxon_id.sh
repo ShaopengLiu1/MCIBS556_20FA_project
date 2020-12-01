@@ -39,6 +39,12 @@ full=$(cat ${input_file} | wc -l)
 ### grep record
 # when encounter dups: 1) use representative genome if any; 2) use newer submission if none representative. That's why use a sort -k2,2rV there
 grep -w -f ${input_file} ${record_file} | sort -k2,2rV  > full_grep_record_with_dups.txt
+# add a GCA -> genus -> species matching file
+cut -d"/" -f 9 genome_file_path.txt | sort |  uniq -c | awk '{print $2}' | cut -d"_" -f 2 > _temp_hits.txt
+grep -f _temp_hits.txt full_grep_record_with_dups.txt > _temp_out.txt
+paste <(cut -f 1 _temp_out.txt) <(cut -f 5 _temp_out.txt | awk '{print $1"\t"$2}') > GCA_genus_species_matching.txt \
+	&& rm _temp_*.txt
+
 echo -n > genome_file_path.txt
 echo -n > protein_file_path.txt
 
@@ -56,8 +62,6 @@ done
 # rm empty record (those with no matched files but the folder path only) in protain db
 sed -i '/NCBI_database\/proteins\/$/d' protein_file_path.txt
 sed -i '/NCBI_database\/genomes\/$/d' genome_file_path.txt #this shouldn't happen, but just in case
-
-
 
 ### check missing rate
 missing=$(python -c "print(1-${count}*1.0/${total})")
